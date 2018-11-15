@@ -76,7 +76,7 @@ def landpage():
     # Registration Form Submitted
     if form_register.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form_register.password.data).decode('utf-8')
-        user = User(username=form_register.username.data, email=form_registser.email.data, password=hashed_password)
+        user = User(username=form_register.username.data, email=form_register.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
