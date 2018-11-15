@@ -1,5 +1,5 @@
 """
-Copied from CoreyMSchafer's Flask Tutorial
+Modified from CoreyMSchafer's Flask Tutorial
 https://github.com/CoreyMSchafer/code_snippets/blob/master/Python/Flask_Blog/06-Login-Auth/flaskblog/routes.py
 """
 from flask import render_template, url_for, flash, redirect, request
@@ -65,6 +65,12 @@ def login():
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
+
+
+# Millen's Added code for a merged landing page
+@app.route("/landpage", methods=['GET', 'POST'])
+def landpage():
+    return
 
 
 @app.route("/logout")
