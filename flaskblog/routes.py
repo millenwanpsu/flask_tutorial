@@ -80,7 +80,7 @@ def landpage():
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
-        return redirect(url_for('login'))
+        return redirect(url_for('landpage'))
     # Login Form Submitted
     if form_login.validate_on_submit():
         user = User.query.filter_by(email=form_login.email.data).first()
